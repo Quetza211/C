@@ -1,0 +1,24 @@
+/* 1: Leer dos cadenas desde teclado y concatenar ambas cadenas quedando solo una, 
+no es válido que sólo manden a imprimir ambas cadenas con  strcpy. */
+
+#include <stdio.h>
+#include <string.h>
+#define N 100
+
+int main(){
+	char cad1[N],cad2[N],cad[N];
+	int n1,n2,i,j;
+	printf("Escriba la primera cadena: ");
+	gets(cad1);
+	printf("Escriba la segunda cadena: ");
+	gets(cad2);
+	n1=strlen(cad1);
+	n2=strlen(cad2);
+	strcpy(cad,cad1); //Copia la cadena en la nueva cadena
+	j=n1; //Para que inicie despues de la primera cadena 
+	for(i=0;i<n2;i++){ //Junta la segunda cadena con la primera
+        cad[j]=cad2[i];
+        j++;
+    }
+    printf("La cadena es: %s",cad);
+}
