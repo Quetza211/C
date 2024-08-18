@@ -1,0 +1,21 @@
+/*determina si un numero es primo*/
+#include<stdio.h>
+
+int main (){
+	int primo, divi=0, a, i;
+	printf("Introduce el numero para saber si es primo o no: ");
+	scanf("%d",&a);
+    primo=1;
+    divi=2;
+		for(i=2; i<a; i++){
+            if(a%i==0){
+                primo = 0;}
+		}
+	if (primo==1){
+		printf("\n %d ES UN numero primo", a);
+	}
+	else {
+		printf("\n %d NO ES un numero primo", a);
+	}
+	
+}
