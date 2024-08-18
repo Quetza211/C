@@ -1,0 +1,23 @@
+#include <stdio.h>
+//Potencia de numeros
+int main(){
+int a, b, i, res=1;
+printf("Escribe el numero que desea elevar ");
+scanf("%d", &a);
+printf("De la potencia que desea elevar ");
+scanf("%d", &b);
+if(b>0){
+	for(i=1; i<=b; i++){
+		res = a*res;
+		}
+	printf("\nEl resultado es %d", res);
+}
+else{
+	b = b * -1;
+for(i=1; i<=b; i++){
+		res = a*res;
+		}
+	printf("\nEl resultado es 1/%d", res);
+}
+}
+
