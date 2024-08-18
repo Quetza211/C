@@ -1,0 +1,20 @@
+#include <stdio.h>
+//Detector de Numeros hasta encontrar un 0
+int main(){
+	int num=1,cont=0,contp=0;
+	printf("Escribe numeros y cuando escribas un cero termina \n");
+	while(num!=0){
+		fflush(stdin);
+		printf("Escribe un numero: ");
+		scanf("%d",&num);
+		if(num<0){
+			cont++;
+		}else{
+			if(num>0){
+			contp++;
+		}
+		}
+	}
+	printf("El total de numeros negativos es %d \n",cont);
+	printf("El total de numeros positivos es %d ",contp);
+}
