@@ -1,0 +1,14 @@
+// 3.Saque el promedio de n numeros solicitados al usuario (no usar arreglos)
+#include <stdio.h>
+int main(){
+	int n=0,num=0,i=0,e=1;
+	float r=0;
+	printf("Escribe el numero de calificaciones para sacar el promedio \n");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++){
+	printf("Escribe la calificacion %d: ",e++);
+	scanf("%d",&num);
+	r+=num;
+	}
+	printf("El promedio es: %f",r/=n);
+}
