@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+//Numero de palabras en una cadena
+int main(){
+	char cad[250];
+	int palabras=0,i;
+	printf("Ingrese la cadena: ");
+	gets(cad);
+	int n=strlen(cad);
+	for(i=1;i<n;i++){
+		cad[i]!='\0';
+		if(cad[i-1]==' ')
+	      palabras++;
+	}
+	printf("La cadena de texto contiene %d palabras",palabras+1);
+}
