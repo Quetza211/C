@@ -1,0 +1,92 @@
+/*  Realizar un programa en C, para el manejo de memoria dinamica, en donde:
+Los elementos se insertan al inicio.
+Para eliminar se elimina el ultimo elemento.
+Tener la opcion de consulta.
+Hacer uso de funciones. */
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+// Función para insertar un elemento al inicio de la lista
+void insert(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+    printf("Elemento insertado correctamente.\n");
+}
+
+// Función para eliminar el último elemento de la lista
+void delete() {
+    if (head == NULL) {
+        printf("La lista está vacía.\n");
+        return;
+    }
+    if (head->next == NULL) {
+        free(head);
+        head = NULL;
+        printf("Elemento eliminado correctamente.\n");
+        return;
+    }
+    struct Node* temp = head;
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
+    printf("Elemento eliminado correctamente.\n");
+}
+
+// Función para mostrar todos los elementos de la lista
+void display() {
+    if (head == NULL) {
+        printf("La lista está vacía.\n");
+        return;
+    }
+    struct Node* temp = head;
+    printf("Elementos de la lista:\n");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    int choice, value;
+    while (1) {
+        printf("1. Insertar elemento\n");
+        printf("2. Eliminar elemento\n");
+        printf("3. Mostrar elementos\n");
+        printf("4. Salir\n");
+        printf("Ingrese su elección: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Ingrese el valor a insertar: ");
+                scanf("%d", &value);
+                insert(value);
+                break;
+            case 2:
+                delete();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Elección inválida. Inténtelo de nuevo.\n");
+        }
+    }
+
+    return 0;
+}
+
