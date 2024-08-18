@@ -1,0 +1,39 @@
+/* 6.2: Dada una matriz cuadrada, verificar si la matriz es triangular superior,una 
+matriz es triangular superior si todos los elementos*/
+
+#include <stdio.h>
+void leer(int matri[][50],int n);
+void trisup(int matri[][50],int n,int t);
+int main(){
+	int matri[50][50];
+	int n,t=1;
+	printf("Escribe una Matriz Cuadrada\n");
+	printf("Escribe la fila y la columna que son las mismas medidas: ");
+	scanf("%d",&n); //Mismo dato para fila y columnas
+	leer(matri,n);
+	trisup(matri,n,t); //Invoco para saber si es triangular superior o no
+}
+void leer(int matri[][50],int n){
+	int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			scanf("%d",&matri[i][j]);
+		}
+	}
+}
+void trisup(int matri[][50],int n,int t){
+	int i,j;
+	  for(i=0;i<n;i++){
+        for(j=0;j<i;j++){
+            if(matri[i][j]!=0) {
+                t=0;
+                break;
+            }
+        }
+    }
+    if(t==1){
+        printf("La matriz es triangular superior\n");
+    }else{
+        printf("La matriz no es triangular superior\n");
+    }
+}
