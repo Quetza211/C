@@ -1,0 +1,20 @@
+#include <stdio.h>
+//Numero Factorial
+int main(){
+int n, res = 1, i;
+printf("De el numero del que desea sacar factorial: ");
+scanf("%d", &n);
+
+if(n<0){
+	printf("\n el factorial no aplica para ese numero: ");
+}
+else{
+	for(i=1; i<=n; i++){
+		res = res * i;
+		printf("%d \n",res);
+	}
+}
+printf("El resultado es %d", res);
+return 0;
+}
+
