@@ -1,0 +1,44 @@
+/*Programa que dada una cadena y un palabra, busca la palabra en la cadena, si existe 
+muestra la posición que esta en la cadena, en caso contrario mostrara que no aparece. */
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char cadena[100], palabra[100];
+    int i, j, encontrado;
+
+    printf("Ingresa una cadena: ");
+    fgets(cadena, 100, stdin);
+
+    printf("Ingresa la palabra a buscar: ");
+    fgets(palabra, 100, stdin);
+
+    // se elimina el salto de linea en la cadena y palabra a buscar
+    cadena[strcspn(cadena, "\n")] = '\0';
+    palabra[strcspn(palabra, "\n")] = '\0';
+
+    encontrado = 0;
+
+    // Recorre la cadena buscando la palabra
+    for (i = 0; i <= strlen(cadena) - strlen(palabra); i++) {
+        for (j = 0; j < strlen(palabra); j++) {
+            if (cadena[i+j] != palabra[j]) {
+                break;
+            }
+        }
+        // if para notificar si encontro la palabra
+        if (j == strlen(palabra)) {
+            printf("La palabra '%s' se encuentra en la posición %d de la cadena.\n", palabra, i);
+            encontrado = 1;
+            //break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("La palabra '%s' no aparece en la cadena.\n", palabra);
+    }
+
+    return 0;
+}
+
