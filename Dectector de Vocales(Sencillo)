@@ -1,0 +1,15 @@
+#include <stdio.h>
+//Escribe caracteres y cuando escribas un punto termina
+int main(){
+	char caract=0;
+	int cont=0;
+	printf("Escribe caracteres y cuando escribas un punto termina \n");
+	while(caract != '.'){
+		fflush(stdin);
+		scanf("%c",&caract);
+		if(caract == 'a' || caract == 'e' || caract == 'i' ||caract == 'o' ||caract == 'u'){
+		cont++;
+		}
+	}
+	printf("El total de Vocales escritas fueron %d",cont);
+}
