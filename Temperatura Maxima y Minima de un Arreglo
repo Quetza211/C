@@ -1,0 +1,20 @@
+/*Practica 2: Leer un vector con la temperatura diaria de n días, obtener la temperatura maxima y minima */
+#include <stdio.h>
+int main(){
+	int cad[50],n,i;
+	int r,r2;
+	printf("Escribe los dias a Registrar: ");
+	scanf("%d",&n);
+	printf("Escribe las temperaturas \n");
+	for(i=0;i<n;i++){ //Lee las temperaturas
+		scanf("%d",&cad[i]);
+	}
+   for(i=0;i<n;i++){ //Busca la temperatura maxima
+      if(cad[i]>0)
+		r=cad[i];
+      if(cad[i]<0) //Busca la temperatura minima
+    	r2=cad[i];
+   }
+	printf("La temperatura Maxima es %d \n",r);
+	printf("La temperatura Minima es %d",r2);
+}
