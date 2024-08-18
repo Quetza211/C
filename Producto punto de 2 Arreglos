@@ -1,0 +1,26 @@
+/* Practica 1 : Leer dos arreglos de la misma dimension y obtener el producto punto de ambos */
+#include <stdio.h>
+int main (){
+	int cad1[50], cad2[50], cad3[50];
+	int tam,i,R;
+	printf("Producto punto de 2 Arreglos con las mismas dimensiones \n");
+	printf("Escribe el tamanio de los arreglos: ");
+	scanf("%d",&tam);
+	printf("Escribe el primer arreglo \n");
+	for(i=0;i<tam;i++){ // Primera lectura del Arreglo
+		scanf("%d",&cad1[i]);
+	}
+	printf("Escribe el segundo arreglo \n");
+	for(i=0;i<tam;i++){ // Segunda lectura del Arreglo
+		scanf("%d",&cad2[i]);
+	}
+	for(i=0;i<tam;i++){ //Multiplicacion de los Arreglos
+		cad3[i]=cad1[i]*cad2[i];	
+	}
+	for(i=0;i<tam;i++){ // Resultado de la multiplicacion de Arreglos y suma de el mismo
+		printf(" %d ",cad3[i]);
+		R+=cad3[i];
+	}
+	printf("\n");
+	printf("El resultado es %d ",R-1);
+}
