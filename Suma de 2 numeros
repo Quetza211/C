@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+	int num1,num2,count;
+	printf("Suma de 2 numeros \n");
+	scanf("%d",&num1);
+	printf("2do numero \n");
+	scanf("%d",&num2);
+	printf("Resultado: %d \n",num1+num2);
+	do{
+	if(num1+num2==50){
+		printf("Eres rico xd \n");
+	}else{
+		if(num1+num2==30){
+			printf("Clase media xd");
+			}else{
+				if(num1+num2==20){
+					printf("Tas mal");
+				}else{
+					printf("Bugeaste el sistema xd");
+					count++;
+				}
+			}
+		}
+		}while(count==3);
+	}
