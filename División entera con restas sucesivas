@@ -1,0 +1,31 @@
+/* Programa: División entera con restas sucesivas */
+
+#include <stdio.h>
+
+int main()
+{
+    int cociente, dividendo, divisor, residuo;
+
+    printf( "\nIntroduzca dividendo: " );
+    scanf( "%d", &dividendo );
+    printf( "\nIntroduzca divisor: " );
+    scanf( "%d", &divisor );
+
+    if ( dividendo > 0 && divisor > 0 )
+    {
+        cociente = 0;
+        residuo = dividendo;
+
+        while ( residuo >= divisor )
+        {
+            residuo -= divisor;
+            cociente++;
+        }
+
+        printf( "\n%d div %d = %d \n residuo = %d ", dividendo, divisor, cociente, residuo );
+    }
+    else
+        printf( "\nLos numeros deben ser mayor a 0.");
+
+    return 0;
+}
