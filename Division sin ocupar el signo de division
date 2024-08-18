@@ -1,0 +1,19 @@
+#include <stdio.h>
+//Division sin usar /
+int main(){
+int res, b, cos = 0;
+printf("De el dividendo : ");
+scanf("%d", &res);
+printf("De el divisor : ");
+scanf("%d", &b);
+if(res >= 0 && b >0){
+	while(res >= b){
+		res = res - b;
+		cos += 1;
+	}
+	printf("El cociente es %d, y el residuo es %d", cos, res);
+}
+else{
+	printf("No es posible esa division con este metodo");
+}
+}
