@@ -1,0 +1,18 @@
+#include <stdio.h>
+//Muestra los numeros Primos de un numero x
+int main(){
+	int i, j, prim, n = 0 ;
+    printf("Escribe un numero mayor a cero para obtener los numeros primos de el \n ");
+    scanf("%d", &n);
+        for(i=1; i<n; i++){
+            prim = 1;
+			for(j = 2; j<i; j++){
+				if( i%j == 0){
+					prim = 0;
+				}
+            }
+            if(prim == 1){
+            printf(" %d ", i);
+            }
+        }
+}
